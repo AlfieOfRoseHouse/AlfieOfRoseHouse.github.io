@@ -15,12 +15,14 @@ h1 {
   color: #66fcf1;
   font-size: 3em;
   margin-bottom: 0;
+  text-align: center;
 }
 
 .subtitle {
   color: #45a29e;
   margin-top: 0;
   font-style: italic;
+  text-align: center;
 }
 
 h2 {
