@@ -33,6 +33,6 @@ Or visit the live version hosted via GitHub Pages at:
 
 **-- Contact --**
 
-For inquiries, collaborations, or questions, feel free to reach out via [my email](mailto:alfiewpearce@gmail.com)
+For inquiries, collaborations, or questions, feel free to reach out via [email](mailto:alfiewpearce@gmail.com)
 
 **--**
