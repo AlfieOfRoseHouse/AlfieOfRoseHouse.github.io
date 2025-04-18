@@ -1,0 +1,67 @@
+body {
+  background-color: #0b0c10;
+  color: #c5c6c7;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 40px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+h1 {
+  color: #66fcf1;
+  font-size: 3em;
+  margin-bottom: 0;
+}
+
+.subtitle {
+  color: #45a29e;
+  margin-top: 0;
+  font-style: italic;
+}
+
+h2 {
+  color: #66fcf1;
+  border-bottom: 1px solid #45a29e;
+  padding-bottom: 5px;
+  margin-top: 40px;
+}
+
+.projectList,
+.todoList {
+  list-style-type: none;
+  padding-left: 0;
+}
+.projectList li,
+.todoList li {
+  margin: 10px 0;
+}
+
+a {
+  color: #1f8ef1;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.75em;
+  color: black;
+}
+.badge.red { background-color: #e74c3c; }
+.badge.green { background-color: #2ecc71; }
+.badge.gold { background-color: #f1c40f; }
+
+footer {
+  margin-top: 60px;
+  font-size: 0.8em;
+  color: #888;
+}
