@@ -20,7 +20,7 @@ cd portfolio
 open index.html
 ```
 Or visit the live version hosted via GitHub Pages at:
-[https://AlfieOfRoseHouse.github.io](https://AlfieOfRoseHouse.github.io)
+[https://alfieofrosehouse.github.io/portfolio/](https://alfieofrosehouse.github.io/portfolio/)
 
 **--**
 
