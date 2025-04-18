@@ -11,6 +11,14 @@ This repository serves as a personal portfolio to showcase my programming projec
 
 **--**
 
+**-- Key --**
+
+- Red Badge is the Programming languages used
+- Green Badeg is type of Project
+- Gold Badge is difficulty of the programme to make
+
+**--**
+
 **-- Usage --**
 
 To view this portfolio locally, clone this repository and open the ```bash index.html``` file in your web browser:
