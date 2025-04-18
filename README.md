@@ -15,7 +15,7 @@ This repository serves as a personal portfolio to showcase my programming projec
 
 To view this portfolio locally, clone this repository and open the ```bash index.html``` file in your web browser:
 ```bash
-git clone https://github.com/AlfieOfRoseHouse/portfolio.git
+git clone https://github.com/AlfieOfRoseHouse/portfolio
 cd portfolio
 open index.html
 ```
