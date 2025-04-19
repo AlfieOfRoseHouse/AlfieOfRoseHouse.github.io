@@ -1,9 +1,22 @@
+:root {
+  --text-light: #f4f4f4;
+  --text-dark: #1a1a1a;
+  --subtitle: #888;
+  --background: #010101;
+  --background-accent:#1a1a1a;
+  --line: #ccc;
+  --accent: #ff9900;
+  --link-light: #66fcf1;
+  --link-dark: #1f8ef1;
+}
+
 body {
-  background-color: #0b0c10;
-  color: #c5c6c7;
   font-family: 'Courier New', monospace;
+  background-color: var(--background);
+  color: var(--text-dark);
+  line-height: 1.6;
   margin: 0;
-  padding: 40px;
+  padding: 1rem;
 }
 
 .container {
@@ -11,29 +24,47 @@ body {
   margin: auto;
 }
 
+h1,
+h2 {
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+  color: car(--text-dark);
+  border-bottom: 1px solid var(--line)
+  padding-bottom: 2em;
+}
+
 h1 {
-  color: #66fcf1;
-  font-size: 3em;
-  margin-bottom: 0;
+  font-size: 2.2rem;
   text-align: center;
-  letter-spacing: 1px;
+  margin-bottom: 0;
+}
+h2 {
+  font-size: 1.6rem;
 }
 
 .subtitle {
-  color: #45a29e;
+  color: var(--subtitle);
   margin-top: 0;
-  font-style: italic;
-  font-size: 1.1em;
+  font-size: 1.2rem;
   text-align: center;
+  border-bottom: none
 }
 
-h2 {
-  color: #66fcf1;
-  border-bottom: 1px solid #45a29e;
-  padding-bottom: 5px;
-  margin-top: 40px;
-  font-size: 1.6em;
-  cursor: pointer;
+p, li {
+  font-size: 1rem;
+  color: var(--text-light);
+}
+
+a {
+  font-size: 1rem;
+  color: var(--link-dark);
+  text-decoration: none;
+  font-weight: bold;
+}
+a:hover {
+  text-decoration: underline;
 }
 
 .projectList,
@@ -47,52 +78,40 @@ h2 {
   margin: 12px 0;
   line-height: 1.6;
   position: relative;
-  background-color: #1a1a1a;
+  background-color: var(--background-accent);
   padding: 10px;
-  border-left: 2px solid #45a29e;
-  transition: background-color 0.3s, transform 0.2s ease-in-out;
+  border-left: 2px solid var(--line);
+  transition: transform 0.2s ease-in-out;
 }
 
 .projectList li:hover,
 .legacyList li:hover {
-  background-color: #2a2a2a;
   transform: scale(1.02);
-}
-
-a {
-  color: #1f8ef1;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 .badge {
   display: inline-block;
-  margin-left: 8px;
-  padding: 2px 8px;
-  border-radius: 12px;
-  font-size: 0.75em;
-  color: black;
-}
-
-.badge.red { background-color: #e74c3c; }
-.badge.green { background-color: #2ecc71; }
-.badge.gold { background-color: #f1c40f; }
-.badge.scratchBadge {
-  background-color: #56ece1;
-  color: black;
-  font-size: 0.65em;
+  background-color: var(--accent);
+  color: var(--text-dark);
+  padding: 0.3em 0.6em;
+  border-radius: 0.5em;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.85rem;
+  margin-top: 0.5em;
   margin-left: 6px;
 }
+
+.badge.red:hover { background-color: #e74c3c; }
+.badge.green:hover { background-color: #2ecc71; }
+.badge.gold:hover { background-color: #f1c40f; }
+.badge.scratchBadge:hover { background-color: #56ece1; }
 
 .description,
 .hoverDescription {
   display: none;
   font-size: 0.9em;
-  color: #ccc;
+  color: var(--text-dark);
   margin-top: 5px;
   font-style: italic;
 }
@@ -119,12 +138,12 @@ a:hover {
 footer {
   margin-top: 60px;
   font-size: 0.9em;
-  color: #888;
+  color: var(--text-light);
   text-align: center;
 }
 
 footer a {
-  color: #66fcf1;
+  color: var(--link-light);
 }
 
 /* Dropdown functionality */
@@ -132,19 +151,17 @@ footer a {
   cursor: pointer;
   user-select: none;
   padding: 10px;
-  font-size: 1.4em;
-  background-color: #222;
+  background-color: var(--background-accent);
   color: #eee;
-  border-top: 2px solid #444;
-  border-left: 2px solid #444;
-  border-right: 2px solid #444;
-  border-bottom: 3px solid #45a29e;
+  border-top: 2px solid var(--text-dark);
+  border-left: 2px solid var(--text-dark);
+  border-right: 2px solid var(--text-dark);
+  border-bottom: 3px solid var(--line);
   margin-top: 20px;
-  transition: background-color 0.2s, color 0.2s;
+  transition: color 0.2s;
 }
 
 .collapsible:hover {
-  background-color: #333;
   color: #fff;
 }
 
