@@ -67,10 +67,39 @@ a:hover {
 .badge.green { background-color: #2ecc71; }
 .badge.gold { background-color: #f1c40f; }
 
+
+.legacyList {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 30px;
+}
+.legacyList li {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #1f1f1f;
+  border-left: 5px solid #66fcf1;
+  transition: transform 0.2s ease-in-out;
+}
+.legacyList li:hover {
+  transform: scale(1.02);
+}
+.legacyList a {
+  font-weight: bold;
+  color: #1f8ef1;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+.legacyList a:hover {
+  text-decoration: underline;
+}
+.legactList p {
+  margin: 5px 0;
+  font-style: italic;
+  color: #aaa;
+}
 #legacyTitle {
   margin-bottom:0;
 }
-
 .scratchAccount {
   color: #56ece1;
   border-bottom: 1px solid #45a29e;
