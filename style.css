@@ -33,6 +33,7 @@ h2 {
   padding-bottom: 5px;
   margin-top: 40px;
   font-size: 1.6em;
+  cursor: pointer;
 }
 
 .projectList,
@@ -44,6 +45,7 @@ h2 {
 .todoList li {
   margin: 12px 0;
   line-height: 1.6;
+  position: relative;
 }
 
 a {
@@ -73,11 +75,25 @@ a:hover {
   margin-left: 6px;
 }
 
+.projectList li .description,
+.legacyList li .description {
+  display: none;
+  font-size: 0.9em;
+  color: #aaa;
+  font-style: italic;
+  margin-top: 4px;
+}
+
+.projectList li:hover .description,
+.legacyList li:hover .description {
+  display: block;
+}
 
 .legacyList {
   list-style-type: none;
   padding-left: 0;
   margin-top: 30px;
+  transition: max-height 0.3s ease;
 }
 .legacyList li {
   margin-bottom: 10px;
@@ -87,6 +103,7 @@ a:hover {
   transition: transform 0.2s ease-in-out;
   font-size: 0.95em;
   line-height: 1.6;
+  position: relative;
 }
 .legacyList li.scratchAccount {
   background: none;
@@ -125,8 +142,9 @@ a:hover {
   font-weight: bold;
   font-size: 0.95em;
 }
-#legacyTitle {
-  margin-bottom:0;
+
+.hidden {
+  display: none;
 }
 
 footer {
@@ -137,4 +155,22 @@ footer {
 }
 footer a {
   color: #66fcf1;
+}
+
+/* Dropdown Button Animation */
+#legacyToggle {
+  cursor: pointer;
+  position: relative;
+}
+
+#legacyToggle::after {
+  content: '\25BC';
+  position: absolute;
+  right: -20px;
+  top: 2px;
+  transition: transform 0.3s ease;
+}
+
+#legacyToggle.active::after {
+  transform: rotate(180deg);
 }
