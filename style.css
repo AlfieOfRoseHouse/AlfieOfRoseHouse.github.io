@@ -147,6 +147,55 @@ a:hover {
   display: none;
 }
 
+.collapsible {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+.collapsible:hover {
+  color: #f1c40f;
+}
+.collapsible::after {
+  content: " ▼";
+  transition: transform 0.3s ease;
+}
+.collapsible.active::after {
+  transform: rotate(-180deg);
+}
+
+/* Hover descriptions */
+.projectList li,
+.legacyList li {
+  position: relative;
+}
+
+.projectList li .project-Description,
+.legacyList li .project-Description {
+  display: none;
+  background-color: #1f1f1f;
+  color: #aaa;
+  padding: 6px 10px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  font-size: 0.85em;
+  width: 100%;
+  border-left: 4px solid #66fcf1;
+  margin-top: 4px;
+}
+
+.projectList li:hover .project-Description,
+.legacyList li:hover.project-Description {
+  display: block;
+}
+
+
+.hidden {
+  display: none;
+}
+
 footer {
   margin-top: 60px;
   font-size: 0.9em;
