@@ -99,12 +99,15 @@ a:hover {
 
 .projectList li .project-description,
 .legacyList li .project-description {
-  display: none;
-  transition: opacity 0.3s ease;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, height 0.3s ease;
 }
 .projectList li:hover .project-description,
 .legacyList li:hover .project-description {
-  display: block;
+  opacity: 1;
+  height: auto;
 }
 
 .legacyList {
