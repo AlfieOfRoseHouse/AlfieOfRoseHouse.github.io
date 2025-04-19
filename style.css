@@ -1,13 +1,13 @@
 :root {
   --text-light: #f4f4f4;
-  --text-dark: #1a1a1a;
+  --text-dark: #3a3a3a;
   --subtitle: #888;
   --background: #010101;
   --background-accent:#1a1a1a;
   --line: #ccc;
   --accent: #ff9900;
   --link-light: #66fcf1;
-  --link-dark: #1f8ef1;
+  --link-dark: #3faef5;
 }
 
 body {
