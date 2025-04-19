@@ -43,10 +43,9 @@ body, html {
 .header {
   position: sticky;
   top: 0;
-  width: 100%;
   z-index: 10;
   background: var(--background);
-  padding: 0.5rem;
+  padding-top: 0.25rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   border-bottom: 1px solid var(--text-dark);
 }
@@ -69,7 +68,7 @@ footer a {
   flex-grow: 1;
   flex: 1;
   padding: 1rem;
-  width: 90%;
+  width: 100%;
 }
 
 h1,
