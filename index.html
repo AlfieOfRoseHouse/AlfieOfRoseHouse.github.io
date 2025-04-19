@@ -107,5 +107,17 @@
         </p>
       </footer>
     </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const toggle = document.getElementById('legacyToggle');
+        const legacyList = document.querySelector('.legacyList');
+    
+        toggle.addEventListener('click', function () {
+          legacyList.classList.toggle('hidden');
+          toggle.classList.toggle('active');
+        });
+      });
+    </script>
   </body>
 </html>
