@@ -50,8 +50,6 @@ body, html {
   border-bottom: 1px solid var(--text-dark);
 }
 .body {
-  position: absolute;
-  max-width: 200px;
   overflow-y: auto;
   flex: 1;
   padding: 1rem;
@@ -182,6 +180,8 @@ a:hover {
 .legacyList {
   overflow: hidden;
   transition: max-height 0.3s ease;
+  padding-left: 0;
+  width: 100%;
 }
 
 /* Dropdown functionality */
