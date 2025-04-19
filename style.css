@@ -1,6 +1,6 @@
 :root {
-  --text-light: #f4f4f4;
-  --text-dark: #eee;
+  --text-light: #eee;
+  --text-dark: #aaa;
   --subtitle: #888;
   --background: #010101;
   --background-accent:#1a1a1a;
@@ -30,7 +30,7 @@ h2 {
   margin-top: 1.5em;
   margin-bottom: 0.5em;
   line-height: 1.2;
-  color: var(--text-dark);
+  color: var(--text-line);
   border-bottom: 1px solid var(--line)
   padding-bottom: 2em;
 }
