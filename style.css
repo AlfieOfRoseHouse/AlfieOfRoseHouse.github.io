@@ -1,6 +1,6 @@
 :root {
   --text-light: #eee;
-  --text-dark: #aaa;
+  --text-dark: #1a1a1a;
   --subtitle: #888;
   --background: #010101;
   --background-accent:#1a1a1a;
@@ -92,7 +92,7 @@ a:hover {
 .badge {
   display: inline-block;
   background-color: var(--accent);
-  color: var(--text-dark);
+  color: var(--text-light);
   padding: 0.3em 0.6em;
   border-radius: 0.5em;
   text-decoration: none;
