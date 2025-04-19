@@ -74,13 +74,22 @@ a:hover {
   margin-top: 30px;
 }
 .legacyList li {
-  margin-bottom: 20px;
-  padding: 10px;
+  margin-bottom: 10px;
+  padding: 8px 10px;
   background-color: #1f1f1f;
   border-left: 5px solid #66fcf1;
   transition: transform 0.2s ease-in-out;
+  font-size: 0.95em;
 }
-.legacyList li:hover {
+.legacyList li.scratchAccount {
+  background: none;
+  border-left: none;
+  transform: none;
+  padding: 0;
+  margin: 12px 0;
+  font-size: 0.9em;
+}
+.legacyList li:hover:not(.scratchAccount) {
   transform: scale(1.02);
 }
 .legacyList a {
@@ -92,23 +101,23 @@ a:hover {
 .legacyList a:hover {
   text-decoration: underline;
 }
-.legactList p {
+.legacyList p {
   margin: 5px 0;
   font-style: italic;
   color: #aaa;
 }
-#legacyTitle {
-  margin-bottom:0;
-}
-.scratchAccount {
+.legacyList p.scratchAccount {
   color: #56ece1;
   background: none;
   border-bottom: 1px solid #45a29e;
-  padding-bottom: 0;
-  margin-top: 0;
-  font-size: 0.9em;
+  padding: 0;
+  margin: 0;
+  font-style: normal;
+  font-size: 0.95em;
 }
-
+#legacyTitle {
+  margin-bottom:0;
+}
 
 footer {
   margin-top: 60px;
