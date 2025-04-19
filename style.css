@@ -108,8 +108,8 @@ a:hover {
 .legacyList a:hover {
   text-decoration: underline;
 }
-.legacyList p {
-  margin: 5px 0;
+.legacyList li p {
+  margin: 3px 0;
   font-style: italic;
   font-weight: bold;
   color: #aaa;
