@@ -42,6 +42,13 @@ h1 {
 }
 h2 {
   font-size: 1.6rem;
+  padding: 10px;
+  background-color: var(--background-accent);
+  border-top: 2px solid var(--text-dark);
+  border-left: 2px solid var(--text-dark);
+  border-right: 2px solid var(--text-dark);
+  border-bottom: 3px solid var(--line);
+  margin-top: 20px;
 }
 
 .subtitle {
@@ -149,14 +156,6 @@ footer a {
 .collapsible {
   cursor: pointer;
   user-select: none;
-  padding: 10px;
-  background-color: var(--background-accent);
-  color: #eee;
-  border-top: 2px solid var(--text-dark);
-  border-left: 2px solid var(--text-dark);
-  border-right: 2px solid var(--text-dark);
-  border-bottom: 3px solid var(--line);
-  margin-top: 20px;
   transform: background-color 0.2s ease;
 }
 
