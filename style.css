@@ -31,7 +31,7 @@ h2 {
   margin-bottom: 0.5em;
   line-height: 1.2;
   color: var(--text-line);
-  border-bottom: 1px solid var(--line)
+  border-bottom: 2px solid var(--line)
   padding-bottom: 2em;
 }
 
@@ -158,11 +158,11 @@ footer a {
   border-right: 2px solid var(--text-dark);
   border-bottom: 3px solid var(--line);
   margin-top: 20px;
-  transition: color 0.2s;
+  transform: background-color 0.2s ease;
 }
 
 .collapsible:hover {
-  color: #fff;
+  background-color: var(--text-dark);
 }
 
 .collapsible::after {
