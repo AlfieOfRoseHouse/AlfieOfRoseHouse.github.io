@@ -67,6 +67,19 @@ a:hover {
 .badge.green { background-color: #2ecc71; }
 .badge.gold { background-color: #f1c40f; }
 
+#legacyTitle {
+  margin-bottom:0;
+}
+
+.scratchAccount {
+  color: #56ece1;
+  border-bottom: 1px solid #45a29e;
+  padding-bottom: 5px;
+  margin-top: 40px;
+  font-size: 1.1em;
+}
+
+
 footer {
   margin-top: 60px;
   font-size: 0.9em;
