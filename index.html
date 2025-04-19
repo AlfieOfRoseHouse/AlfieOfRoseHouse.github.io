@@ -111,9 +111,17 @@
     </div>
 
     <script>
-      document.getElementById('legacyToggle').addEventListener('click', function() {
-        const legacyList = document.querySelector('.legacyList');
-        legacyList.classList.toggle('hidden');
+      // Toggle dropdown for legacy section
+      document.getElementById("legacyToggle").addEventListener("click", function() {
+        const legacyList = document.querySelector(".legacyList");
+        legacyList.classList.toggle("hidden");
+    
+        // Change arrow direction
+        if (legacyList.classList.contains("hidden")) {
+          this.innerHTML = "Legacy Projects ▼";
+        } else {
+          this.innerHTML = "Legacy Projects ▲";
+        }
       });
     </script>
   </body>
