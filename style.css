@@ -31,7 +31,7 @@ h2 {
   margin-bottom: 0.5em;
   line-height: 1.2;
   color: var(--text-light);
-  border-bottom: 2px solid var(--line)
+  border-bottom: 2px solid var(--line);
   padding-bottom: 2em;
 }
 
