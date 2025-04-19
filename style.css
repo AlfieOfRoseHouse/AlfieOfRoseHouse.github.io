@@ -66,6 +66,12 @@ a:hover {
 .badge.red { background-color: #e74c3c; }
 .badge.green { background-color: #2ecc71; }
 .badge.gold { background-color: #f1c40f; }
+.badge.scratchBadge {
+  background-color: #56ece1;
+  color: black;
+  font-size: 0.65em;
+  margin-left: 6px;
+}
 
 
 .legacyList {
@@ -105,6 +111,7 @@ a:hover {
   margin: 5px 0;
   font-style: italic;
   color: #aaa;
+  font-size: 0.75em;
 }
 .legacyList p.scratchAccount {
   color: #56ece1;
