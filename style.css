@@ -149,12 +149,19 @@ a:hover {
 
 .collapsible {
   cursor: pointer;
-  position: relative;
-  display: inline-block;
-  transition: color 0.2s ease;
+  user-select: none;
+  padding: 10px;
+  font-size: 1.4em;
+  background-color: #222;
+  color: #eee;
+  border: 2px solid #444;
+  border-radius: 8px;
+  margin-top: 20px;
+  transition: background-color 0.2s, color 0.2s;
 }
 .collapsible:hover {
-  color: #f1c40f;
+  background-color: #333;
+  color: #fff;
 }
 .collapsible::after {
   content: " ▼";
@@ -164,7 +171,6 @@ a:hover {
   transform: rotate(-180deg);
 }
 
-/* Hover descriptions */
 .projectList li,
 .legacyList li {
   position: relative;
@@ -192,8 +198,44 @@ a:hover {
 }
 
 
-.hidden {
+/* Dropdown container - hidden by default */
+.legacyList.hidden {
   display: none;
+}
+
+.legacyList ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+/* Individual project list items */
+.legacyList li {
+  background-color: #1a1a1a;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+/* Hovering over the project reveals its secrets */
+.legacyList li:hover {
+  background-color: #2a2a2a;
+}
+
+/* Hidden by default */
+.hoverDescription {
+  display: none;
+  font-size: 0.9em;
+  color: #ccc;
+  margin-top: 5px;
+}
+
+/* When hovering the li, show the description */
+.legacyList li:hover .hoverDescription {
+  display: block;
 }
 
 footer {
