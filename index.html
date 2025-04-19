@@ -122,6 +122,13 @@
         } else {
           this.innerHTML = "Legacy Projects ▲";
         }
+
+        const legacyToggle = document.getElementById('legacyToggle');
+
+        legacyToggle.addEventListener('click', () => {
+          legacyList.classList.toggle('hidden');
+          legacyToggle.classList.toggle('active'); // this triggers arrow rotation
+        });
       });
     </script>
   </body>
