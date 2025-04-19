@@ -17,6 +17,7 @@ body, html {
   line-height: 1.6;
   margin: 0;
   padding: 0;
+  height: 100vh;
 }
 
 .container {
@@ -53,8 +54,9 @@ body, html {
   padding: 1rem;
 }
 footer {
-  position: sticky;
+  position: absolute;
   bottom: 0;
+  width: 100%;
   z-index: 10;
   background: var(--background);
   padding: 0.75rem 1rem;
