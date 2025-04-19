@@ -111,24 +111,15 @@
     </div>
 
     <script>
-      // Toggle dropdown for legacy section
-      document.getElementById("legacyToggle").addEventListener("click", function() {
-        const legacyList = document.querySelector(".legacyList");
+      const legacyToggle = document.getElementById("legacyToggle");
+      const legacyList = document.querySelector(".legacyList");
+
+      legacyToggle.addEventListener("click", () => {
         legacyList.classList.toggle("hidden");
-    
-        // Change arrow direction
-        if (legacyList.classList.contains("hidden")) {
-          this.innerHTML = "Legacy Projects ▼";
-        } else {
-          this.innerHTML = "Legacy Projects ▲";
-        }
-
-        const legacyToggle = document.getElementById('legacyToggle');
-
-        legacyToggle.addEventListener('click', () => {
-          legacyList.classList.toggle('hidden');
-          legacyToggle.classList.toggle('active'); // this triggers arrow rotation
-        });
+        legacyToggle.classList.toggle("active");
+        legacyToggle.innerHTML = legacyList.classList.contains("hidden")
+          ? "Legacy Projects ▼"
+          : "Legacy Projects ▲";
       });
     </script>
   </body>
