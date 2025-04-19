@@ -105,7 +105,6 @@ a:hover {
 .badge.red:hover { background-color: #e74c3c; }
 .badge.green:hover { background-color: #2ecc71; }
 .badge.gold:hover { background-color: #f1c40f; }
-.badge.scratchBadge:hover { background-color: #56ece1; }
 
 .description,
 .hoverDescription {
