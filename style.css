@@ -34,7 +34,10 @@ body.starry {
   right: 1em;
   background: var(--background-accent);
   color: var(--text-light);
+  font-size: 1em;
+  line-height: 1.6;
   border: 0;
+  border-bottom: 1px solid var(--line);
 }
 #toggleBackground:hover{
   background: var(--background);
