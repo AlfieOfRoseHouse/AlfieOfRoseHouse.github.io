@@ -16,7 +16,7 @@ function setup() {
       y: random(height),
       r: random(0.5, 2),
       alpha: random(150, 255),
-      delta: random(0.05, 0.2);
+      delta: random(0.05, 0.2),
       increasing: random() > 0.5
     });
   }
