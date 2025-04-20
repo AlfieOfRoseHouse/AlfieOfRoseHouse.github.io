@@ -21,6 +21,14 @@ body, html {
   overflow: hidden;
 }
 
+.toggleBackground{
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  background: var(--background);
+  color: var(--text-dark);
+}
+
 .container {
   position: absolute;
   top: 50%;
