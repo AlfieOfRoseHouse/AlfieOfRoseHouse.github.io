@@ -24,11 +24,13 @@ function setup() {
   // Generate nebula clouds
   for (let i = 0; i < 5; i++) {
     clouds.push({
-      x: random(width),
-      y: random(height),
+      baseX: random(width),
+      baseY: random(height),
       size: random(100, 300),
       col: color(random(150, 255), random(50, 150), random(150, 255), 50),
-      offset: random(1000) // For unique movement
+      offset: random(1000), // for shape randomness
+      moveSeedX: random(1000),
+      moveSeedY: random(1000)
     });
   }
 }
@@ -80,7 +82,9 @@ function drawAnimatedCloud(cloud) {
     let d = dist(0, 0, offsetX, offsetY);
     if (d < cloud.size) {
       fill(cloud.col);
-      ellipse(cloud.x + offsetX, cloud.y + offsetY, random(5, 20));
+      let driftX = noise(cloud.moveSeedX + frameCount * 0.001) * 50 - 25;
+      let driftY = noise(cloud.moveSeedY + frameCount * 0.001) * 50 - 25;
+      ellipse(cloud.baseX + driftX + offsetX, cloud.baseY + driftY + offsetY, random(5, 20));
     }
   }
 }
