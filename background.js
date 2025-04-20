@@ -22,7 +22,7 @@ function setup() {
     });
   }
 
-  const toggleBtn = document.getElementById('toggle-background');
+  const toggleBtn = document.getElementById('toggleBackground');
   if (toggleBtn) {
     toggleBtn.addEventListener('click', () => {
       showBackground = !showBackground;
