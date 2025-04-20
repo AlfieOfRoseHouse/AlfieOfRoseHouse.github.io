@@ -1,3 +1,5 @@
+var showBackground = true;
+
 function setup() {
   let canvas = createCanvas(windowWidth, windowHeight);
   canvas.position(0, 0);
@@ -15,13 +17,15 @@ if (toggleBtn) {
   toggleBtn.addEventListener('click', () => {
     showBackground = !showBackground;
     if (!showBackground) {
-      clear(); // Remove stars visually
+      clear();
+    } else {
+      drawNebula();
     }
   });
 }
 
 function drawNebula() {
-  background(10, 10, 20); // Deep space background
+  background(10, 10, 20);
 
   // Stars
   for (let i = 0; i < 300; i++) {
