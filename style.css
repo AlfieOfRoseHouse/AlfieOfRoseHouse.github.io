@@ -21,12 +21,15 @@ body, html {
   overflow: hidden;
 }
 
-.toggleBackground{
+#toggleBackground{
   position: absolute;
   top: 1em;
   right: 1em;
-  background: var(--background);
+  background: var(--background-accent);
   color: var(--text-dark);
+}
+#toggleBackground:hover{
+  background: var(--background);
 }
 
 .container {
