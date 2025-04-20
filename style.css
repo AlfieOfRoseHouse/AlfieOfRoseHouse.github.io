@@ -27,7 +27,7 @@ body, html {
   left: 50%;
   transform: translate(-50%, -50%);
   width: min(90vmin, 100vw);
-  height: min(90vmin, 100vh);
+  height: 100vh;
   background: var(--background);
   display: flex;
   flex-direction: column;
