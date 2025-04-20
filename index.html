@@ -18,7 +18,7 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
     
   </head>
-  <body>
+  <body class="starry">
     <button id='toggleBackground'>Toggle Background!</button>
     
     <div class="container">
@@ -150,6 +150,11 @@
         legacyToggle.innerHTML = legacyList.classList.contains("hidden")
           ? "Legacy Projects ▼"
           : "Legacy Projects ▲";
+      });
+
+      const toggleBtn = document.getElementById("toggleBackground");
+      toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("starry");
       });
     </script>
   </body>
