@@ -16,11 +16,12 @@ function setup() {
       x: random(width),
       y: random(height),
       size: random(0.5, 2),
-      alpha: random(100, 255)
+      alpha: random(100, 255),
+      delta: random(0.5, 1.5), // how fast it twinkles
+      increasing: random() > 0.5
     });
   }
 
-  // Add toggle listener
   const toggleBtn = document.getElementById('toggleBackground');
   if (toggleBtn) {
     toggleBtn.addEventListener('click', () => {
@@ -39,15 +40,24 @@ function draw() {
 }
 
 function drawNebula() {
-  background(5, 5, 15, 50); // translucent to get a nice motion effect
+  background(5, 5, 15, 50); // soft translucent background
 
-  // Stars
+  // Twinkling stars
   for (let star of stars) {
+    // Update alpha for twinkling
+    if (star.increasing) {
+      star.alpha += star.delta;
+      if (star.alpha >= 255) star.increasing = false;
+    } else {
+      star.alpha -= star.delta;
+      if (star.alpha <= 100) star.increasing = true;
+    }
+
     fill(255, star.alpha);
     ellipse(star.x, star.y, star.size);
   }
 
-  // Simple nebula clouds
+  // Gentle nebula clouds drifting
   for (let i = 0; i < 5; i++) {
     let x = noise(frameCount * 0.001 + i) * width;
     let y = noise(frameCount * 0.001 + i + 1000) * height;
