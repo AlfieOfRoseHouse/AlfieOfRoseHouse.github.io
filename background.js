@@ -12,7 +12,7 @@ function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   drawNebula();
 }
-toggleBackground.addEventListener("click", function() {
+document.getElementById("toggleBackground").addEventListener("click", function() {
   visible = !visible;
   if (visible) drawNebula();
   if (!visible) background(0, 0, 0);
