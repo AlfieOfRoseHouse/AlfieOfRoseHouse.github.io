@@ -1,9 +1,9 @@
 let stars = [];
-let canvas;
+let blobs = [];
 let showBackground = true;
 
 function setup() {
-  canvas = createCanvas(windowWidth, windowHeight);
+  let canvas = createCanvas(windowWidth, windowHeight);
   canvas.position(0, 0);
   canvas.style('z-index', '-100');
   canvas.style('position', 'fixed');
@@ -11,14 +11,27 @@ function setup() {
   canvas.style('left', '0');
   noStroke();
 
-  for (let i = 0; i < 500; i++) { // denser stars
+  // Generate stars
+  for (let i = 0; i < 400; i++) {
     stars.push({
       x: random(width),
       y: random(height),
-      size: random(0.5, 2),
-      speed: random(0.1, 0.5),
-      alpha: random(100, 255),
+      size: random(0.5, 2.5),
+      speed: random(0.2, 0.6),
+      alpha: random(150, 255),
       twinkle: random(0.01, 0.05)
+    });
+  }
+
+  // Generate nebula clouds
+  for (let i = 0; i < 10; i++) {
+    blobs.push({
+      baseX: random(width),
+      baseY: random(height),
+      size: random(300, 600),
+      hue: random(260, 320),
+      offset: random(1000),
+      speed: random(0.001, 0.003)
     });
   }
 
@@ -29,40 +42,38 @@ function setup() {
       if (!showBackground) clear();
     });
   }
+
+  colorMode(HSL, 360, 100, 100, 100);
 }
 
 function draw() {
-  if (showBackground) drawNebula();
+  if (!showBackground) return;
+  background(250, 100, 5, 5);
+
+  drawStars();
+  drawNebula();
+}
+
+function drawStars() {
+  for (let s of stars) {
+    fill(0, 0, 100, s.alpha / 255 * 100);
+    ellipse(s.x, s.y, s.size);
+    s.y += s.speed;
+    if (s.y > height) {
+      s.y = 0;
+      s.x = random(width);
+    }
+    s.alpha += random(-1, 1) * s.twinkle * 255;
+    s.alpha = constrain(s.alpha, 100, 255);
+  }
 }
 
 function drawNebula() {
-  background(5, 5, 15, 30); // smooth trails
-
-  // Stars - move downward gently and twinkle
-  for (let star of stars) {
-    fill(255, star.alpha);
-    ellipse(star.x, star.y, star.size);
-
-    star.y += star.speed;
-    if (star.y > height) {
-      star.y = 0;
-      star.x = random(width);
-    }
-
-    // Twinkle effect
-    star.alpha += random(-1, 1) * star.twinkle * 255;
-    star.alpha = constrain(star.alpha, 100, 255);
-  }
-
-  // Nebula cloud blobs - slow drifting + noise-based positions
-  for (let i = 0; i < 8; i++) {
-    let offset = frameCount * 0.001 + i * 10;
-    let x = noise(offset) * width;
-    let y = noise(offset + 1000) * height;
-    let sizeX = 400 + sin(offset * 2) * 50;
-    let sizeY = 300 + cos(offset * 2) * 50;
-    fill(100 + i * 10, 0, 255 - i * 20, 20); // varying purples
-    ellipse(x, y, sizeX, sizeY);
+  for (let b of blobs) {
+    let t = frameCount * b.speed + b.offset;
+    let x = b.baseX + sin(t * 2) * 50;
+    let y = b.baseY + cos(t) * 50;
+    fill(b.hue, 80, 60,
   }
 }
 
