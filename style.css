@@ -20,6 +20,13 @@ body, html {
   height: 100vh;
   overflow: hidden;
 }
+body.starry {
+  background: url('https://www.transparenttextures.com/patterns/stardust.png'), radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  background-size: cover;
+  background-attachment: fixed;
+  transition: background 1s ease-in-out;
+}
+
 
 #toggleBackground{
   position: absolute;
