@@ -6,6 +6,7 @@ This repository serves as a personal portfolio to showcase my programming projec
 **-- How it Works --**
 
 - Built with _HTML_, _CSS_, _JS_ for a responsive layout and interactivity
+- The background is created in _JS_ using (P5) - you can disable it with the button in the top right
 - Features _interactive sections_ showcasing my projects
 - Includes _links_ to my GitHub repositories, providing access to code samples and more details
 
