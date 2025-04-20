@@ -39,9 +39,11 @@ body.starry {
   border: 0;
   border-bottom: 1px solid var(--line);
   z-index: 20;
+  transition: background-color 0.2s ease, border 0.3s ease
 }
 #toggleBackground:hover{
   background: var(--background);
+  border: 0;
 }
 
 .container {
