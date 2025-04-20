@@ -15,7 +15,7 @@ function windowResized() {
 function toggleBackground() {
   background = !background;
   if (background) drawNebula();
-  if (!background) background(#000)
+  if (!background) background(0, 0, 0)
 }
 
 function drawNebula() {
