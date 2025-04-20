@@ -38,7 +38,7 @@ body.starry {
   line-height: 1.6;
   border: 0;
   border-bottom: 1px solid var(--line);
-  z-index: 10;
+  z-index: 20;
 }
 #toggleBackground:hover{
   background: var(--background);
