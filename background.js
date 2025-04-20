@@ -37,7 +37,6 @@ function createCloud(x, y, size, col) {
     }
   }
 }
-}
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
