@@ -26,7 +26,8 @@ body, html {
   top: 1em;
   right: 1em;
   background: var(--background-accent);
-  color: var(--text-dark);
+  color: var(--text-light);
+  border: 0;
 }
 #toggleBackground:hover{
   background: var(--background);
