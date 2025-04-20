@@ -1,3 +1,5 @@
+var background = true;
+
 function setup() {
   let canvas = createCanvas(windowWidth, windowHeight);
   canvas.position(0, 0);
@@ -6,10 +8,14 @@ function setup() {
   noStroke();
   drawNebula();
 }
-
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   drawNebula();
+}
+function toggleBackground() {
+  background = !background;
+  if (background) drawNebula();
+  if (!background) background(#000)
 }
 
 function drawNebula() {
