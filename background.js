@@ -1,4 +1,4 @@
-var background = true;
+var visible = true;
 
 function setup() {
   let canvas = createCanvas(windowWidth, windowHeight);
@@ -13,9 +13,9 @@ function windowResized() {
   drawNebula();
 }
 toggleBackground.addEventListener("click", () => {() {
-  background = !background;
-  if (background) drawNebula();
-  if (!background) background(0, 0, 0)
+  visible = !visible;
+  if (visible) drawNebula();
+  if (!visible) background(0, 0, 0);
 });
 
 function drawNebula() {
