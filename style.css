@@ -28,6 +28,10 @@ body.starry {
   transition: background 1s ease-in-out;
 }
 */
+canvas {
+  display: block;
+  pointer-events: none;
+}
 
 
 #toggleBackground{
