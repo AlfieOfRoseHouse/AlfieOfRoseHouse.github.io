@@ -7,16 +7,17 @@ function setup() {
   canvas.style('position', 'fixed');
   noStroke();
   drawNebula();
+
+  document.getElementById("toggleBackground").addEventListener("click", function() {
+    visible = !visible;
+    if (visible) drawNebula();
+    if (!visible) background(0, 0, 0);
+  });
 }
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   drawNebula();
 }
-document.getElementById("toggleBackground").addEventListener("click", function() {
-  visible = !visible;
-  if (visible) drawNebula();
-  if (!visible) background(0, 0, 0);
-});
 
 function drawNebula() {
   background(10, 10, 20); // Deep space background
