@@ -12,11 +12,11 @@ function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   drawNebula();
 }
-function toggleBackground() {
+toggleBackground.addEventListener("click", () => {() {
   background = !background;
   if (background) drawNebula();
   if (!background) background(0, 0, 0)
-}
+});
 
 function drawNebula() {
   background(10, 10, 20); // Deep space background
