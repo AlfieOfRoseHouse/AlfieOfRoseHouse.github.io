@@ -36,14 +36,13 @@ Or visit the live version hosted via GitHub Pages at:
 
 - **Email Harvester:** A Python script for scraping publicly available email addresses based on a search query **_Educational use only!!_**
 - **Draughts Game:** A Draughts-based game built using _HTML_, _CSS_, _JS_
+- ...
 
 **-- Legacy Projects --** (a couple of projects made in Scratch and during my childhood)
 
 - **Asteroid Hunter:** An arcade-style game made in Scratch
 - **3d Raycaster:** A 3d raycaster using the pen extension of Scratch
-- **Firework Simulator:** A particle simulation that creates particle bursts (simulating fireworks) at random intervals
-- **Maze Generator:** Creates a random maze using recursive backtracking
-- **Zombie Shooter:** An arcade-style game made in Scratch
+- ...
 
 **--**
 
