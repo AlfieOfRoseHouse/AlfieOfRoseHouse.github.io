@@ -1,50 +1,61 @@
-var visible = true;
+let stars = [];
+let canvas;
+let showBackground = true;
 
 function setup() {
-  let canvas = createCanvas(windowWidth, windowHeight);
+  canvas = createCanvas(windowWidth, windowHeight);
   canvas.position(0, 0);
-  canvas.style('z-index', '-10');
+  canvas.style('z-index', '-100');
   canvas.style('position', 'fixed');
+  canvas.style('top', '0');
+  canvas.style('left', '0');
   noStroke();
-  drawNebula();
+  
+  for (let i = 0; i < 200; i++) {
+    stars.push({
+      x: random(width),
+      y: random(height),
+      size: random(0.5, 2),
+      alpha: random(100, 255)
+    });
+  }
 
-  document.getElementById("toggleBackground").addEventListener("click", function() {
-    visible = !visible;
-    if (visible) drawNebula();
-    if (!visible) background(0, 0, 0);
-  });
+  // Add toggle listener
+  const toggleBtn = document.getElementById('toggleBackground');
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      showBackground = !showBackground;
+      if (!showBackground) {
+        clear(); // Remove stars visually
+      }
+    });
+  }
 }
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-  drawNebula();
+
+function draw() {
+  if (showBackground) {
+    drawNebula();
+  }
 }
 
 function drawNebula() {
-  background(10, 10, 20); // Deep space background
+  background(5, 5, 15, 50); // translucent to get a nice motion effect
 
   // Stars
-  for (let i = 0; i < 300; i++) {
-    let x = random(width);
-    let y = random(height);
-    let r = random(0.5, 2);
-    fill(255, 255, 255, random(150, 255));
-    ellipse(x, y, r, r);
+  for (let star of stars) {
+    fill(255, star.alpha);
+    ellipse(star.x, star.y, star.size);
   }
 
-  // Nebula clouds
+  // Simple nebula clouds
   for (let i = 0; i < 5; i++) {
-    drawCloud(random(width), random(height), random(100, 300), color(random(150, 255), random(50, 150), random(150, 255), 50));
+    let x = noise(frameCount * 0.001 + i) * width;
+    let y = noise(frameCount * 0.001 + i + 1000) * height;
+    fill(100, 0, 255, 30);
+    ellipse(x, y, 300, 200);
   }
 }
 
-function drawCloud(x, y, size, col) {
-  for (let i = 0; i < 100; i++) {
-    let offsetX = random(-size, size);
-    let offsetY = random(-size, size);
-    let d = dist(0, 0, offsetX, offsetY);
-    if (d < size) {
-      fill(col);
-      ellipse(x + offsetX, y + offsetY, random(5, 20));
-    }
-  }
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
