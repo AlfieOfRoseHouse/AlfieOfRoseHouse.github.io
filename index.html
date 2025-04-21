@@ -20,7 +20,21 @@
     
     <!-- Apple touch icon -->
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-    
+
+    <!-- Background Music (Made by me) -->
+    <audio id="bgMusic" src="Galactic Gridlock.mp3" type="audio/mp3"></audio>
+
+    <script>
+      const audio = document.getElementById("bgMusic");
+      audio.play(); //play on load
+
+      audio.addEventListener('ended', function () { //Repeat after small break
+        setTimeout(() => {
+          audio.currentTime = 0;
+          audio.play();
+        }, 2000);
+      });
+    </script>
   </head>
   <body>
     <div id="buttonContainer">
