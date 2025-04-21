@@ -162,6 +162,10 @@ h2 {
   width: fit-content;
   border-top: 2px solid var(--line);
 }
+#legacyDescription {
+  padding: 0;
+  border: 0;
+}
 
 p, li {
   font-size: 1rem;
