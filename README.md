@@ -3,12 +3,12 @@ Coding Languages: HTML / CSS / JS / PYTHON | Category: Personal Portfolio
 
 This repository serves as a personal portfolio to showcase my programming projects since 2025, including web development, game development, and scripts I’ve worked on. It's designed to be a clean, responsive site, allowing potential employers and collaborators to easily explore my works.
 
-Music is originally made for my coursework game called Galactic Gridlock, which hasn't yet been  added to my portfolio.
+Music is originally made _(in flat.io)_ for my coursework game called Galactic Gridlock, which hasn't yet been added to my portfolio.
 
 **-- How it Works --**
 
 - Built with _HTML_, _CSS_, _JS_ for a responsive layout and interactivity
-- The background is created in _JS_ using (P5) - you can disable it with the button in the top right
+- The background is created in _JS_ using _(P5)_ - you can disable it with the button in the top right
 - Features _interactive sections_ showcasing my projects
 - Includes _links_ to my GitHub repositories, providing access to code samples and more details
 
