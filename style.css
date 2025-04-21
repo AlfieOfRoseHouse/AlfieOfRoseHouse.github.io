@@ -48,8 +48,8 @@ canvas {
 #buttonContainer{
   display: flex;
   flex-flow: column nowrap;
-  justify-content: flex-start;
   position: absolute;
+  gap: 0.5em;
   top: 1em;
   right: 1em;
   color: var(--text-light);
@@ -59,11 +59,11 @@ canvas {
 }
 #toggleBackground,
 #toggleTheme {
+  flex: 0 0 1.5em;
   position: relative;
   border: 0;
   border-bottom: 1px solid var(--line);
   background: var(--background-accent);
-  padding-bottom: 0.5em;
   cursor: pointer;
   transition: background-color 0.2s ease, border 0.3s ease;
 }
