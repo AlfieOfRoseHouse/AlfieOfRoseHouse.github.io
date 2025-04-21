@@ -3,6 +3,8 @@ Coding Languages: HTML / CSS / JS / PYTHON | Category: Personal Portfolio
 
 This repository serves as a personal portfolio to showcase my programming projects since 2025, including web development, game development, and scripts I’ve worked on. It's designed to be a clean, responsive site, allowing potential employers and collaborators to easily explore my works.
 
+Music is originally made for my coursework game called Galactic Gridlock, which hasn't yet been  added to my portfolio.
+
 **-- How it Works --**
 
 - Built with _HTML_, _CSS_, _JS_ for a responsive layout and interactivity
