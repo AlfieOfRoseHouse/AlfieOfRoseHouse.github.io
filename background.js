@@ -53,7 +53,7 @@ function windowResized() {
 }
 
 function draw() {
-  background(10, 10, 20, 50); //slight alpha for motion trails
+  background(10, 10, 20, 150); //slight alpha for motion trails
 
     if (!showBackground) return; //after background too fade it out
 
