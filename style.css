@@ -151,21 +151,57 @@ h2 {
   margin-top: 40px;
 }
 
-.subtitle {
-  color: var(--subtitle);
-  margin: 0 auto;
-  padding-top: 0.5rem;
-  padding-bottom: 2rem;
-  font-size: 1rem;
-  text-align: center;
-  border-bottom: none;
-  width: fit-content;
-  border-top: 2px solid var(--line);
+.subtitle-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  position: relative;
 }
+.subtitle-item {
+  position: relative;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--subtitle);
+  transition: color 0.3s ease;
+}
+.subtitle-item:hover span {
+  color: var(--text-light);
+}
+.tooltip {
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background-color: var(--background-accent);
+  color: var(--text-light);
+  border: 1px solid var(--line);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  width: max-content;
+  max-width: 280px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  font-size: 0.85rem;
+  z-index: 10;
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+}
+.subtitle-item:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
 #legacyDescription {
   padding: 0;
   margin-top: -1em;
   border: 0;
+  color: var(--subtitle);
+  font-size: 1rem;
+  text-align: center;
+  width: fit-content;
 }
 
 p, li {
