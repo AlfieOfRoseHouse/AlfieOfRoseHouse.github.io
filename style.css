@@ -63,6 +63,7 @@ canvas {
   border: 0;
   border-bottom: 1px solid var(--line);
   background: var(--background-accent);
+  padding-bottom: 0.5em;
   cursor: pointer;
   transition: background-color 0.2s ease, border 0.3s ease;
 }
