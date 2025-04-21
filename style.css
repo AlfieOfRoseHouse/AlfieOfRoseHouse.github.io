@@ -9,6 +9,17 @@
   --link-light: #66fcf1;
   --link-dark: #3faef5;
 }
+[data-theme="light"] {
+  --text-light: #1a1a1a;
+  --text-dark: #eee;
+  --subtitle: #666;
+  --background: #fdfdfd;
+  --background-accent:#f0f0f0;
+  --line: #999;
+  --accent: #cc7a00;
+  --link-light: #006d77;
+  --link-dark: #0077cc;
+}
 
 body, html {
   font-family: 'Courier New', monospace;
@@ -34,21 +45,29 @@ canvas {
 }
 
 
-#toggleBackground{
+#buttonContainer{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
   position: absolute;
   top: 1em;
   right: 1em;
-  background: var(--background-accent);
   color: var(--text-light);
   font-size: 1em;
   line-height: 1.6;
+  z-index: 20;
+}
+#toggleBackground,
+#toggleTheme {
+  position: relative;
   border: 0;
   border-bottom: 1px solid var(--line);
-  z-index: 20;
+  background: var(--background-accent);
   cursor: pointer;
-  transition: background-color 0.2s ease, border 0.3s ease
+  transition: background-color 0.2s ease, border 0.3s ease;
 }
-#toggleBackground:hover{
+#toggleBackground:hover,
+#toggleTheme:hover {
   background: var(--background);
   border: 0;
 }
