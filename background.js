@@ -3,13 +3,25 @@ let clouds = [];
 let showBackground = true;
 
 function setup() {
+  //Startup P5
   let canvas = createCanvas(windowWidth, windowHeight);
   canvas.position(0, 0);
   canvas.style('z-index', '-10');
   canvas.style('position', 'fixed');
   noStroke();
 
-  // Generate stars
+  //Button
+  const toggleBtn = document.getElementById('toggleBackground');
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      showBackground = !showBackground;
+      if (!showBackground) {
+        background(0, 0, 0);
+      }
+    });
+  }
+
+  //Generate stars
   for (let i = 0; i < 300; i++) {
     stars.push({
       x: random(width),
@@ -20,14 +32,15 @@ function setup() {
       increasing: random() > 0.5
     });
   }
+
+  //Generate Nebula
   for (let i = 0; i < 5; i++) {
     const col = color(random(150, 255), random(50, 150), random(150, 255), 50);
     createCloud(random(width), random(height), random(100, 300), col);
   }
 }
-  // Generate nebula clouds
 function createCloud(x, y, size, col) {
-  // Create particles for the cloud
+  //Create animateable particles for the cloud
   for (let i = 0; i < 100; i++) {
     let offsetX = random(-size, size);
     let offsetY = random(-size, size);
@@ -42,30 +55,20 @@ function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 
-const toggleBtn = document.getElementById('toggleBackground');
-if (toggleBtn) {
-  toggleBtn.addEventListener('click', () => {
-    showBackground = !showBackground;
-    if (!showBackground) {
-      background(0, 0, 0);
-    }
-  });
-}
-
 function draw() {
   if (!showBackground) return;
 
-  background(10, 10, 20, 50); // slight alpha for motion trails
+  background(10, 10, 20, 50); //slight alpha for motion trails
 
   // Twinkling stars
   for (let star of stars) {
-    star.alpha += star.delta;  // Change in alpha
+    star.alpha += star.delta;
     if (star.alpha >= 255 || star.alpha <= 50) {
-      star.delta *= -1;  // Reverse direction when it hits the extremes
+      star.delta *= -1;
     }
   
     fill(255, 255, 255, star.alpha);
-    ellipse(star.x, star.y, star.size);
+    ellipse(star.x, star.y, star.r);
   }
 
   // Moving nebula clouds
@@ -81,17 +84,13 @@ class CloudParticle {
     this.y = y;
     this.size = size;
     this.col = col;
-    this.xSpeed = random(-0.2, 0.2); // Random movement speed for x-axis
-    this.ySpeed = random(-0.2, 0.2); // Random movement speed for y-axis
+    this.xSpeed = random(-0.2, 0.2);
+    this.ySpeed = random(-0.2, 0.2);
   }
-
-  // Update the position of the particle
   update() {
     this.x += this.xSpeed;
     this.y += this.ySpeed;
   }
-
-  // Draw the particle
   display() {
     fill(this.col);
     ellipse(this.x, this.y, this.size);
