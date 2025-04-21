@@ -15,9 +15,6 @@ function setup() {
   if (toggleBtn) {
     toggleBtn.addEventListener('click', () => {
       showBackground = !showBackground;
-      if (!showBackground) {
-        background(0, 0, 0);
-      }
     });
   }
 
@@ -56,9 +53,9 @@ function windowResized() {
 }
 
 function draw() {
-  if (!showBackground) return;
-
   background(10, 10, 20, 50); //slight alpha for motion trails
+
+    if (!showBackground) return; //after background too fade it out
 
   // Twinkling stars
   for (let star of stars) {
