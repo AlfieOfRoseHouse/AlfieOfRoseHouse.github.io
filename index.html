@@ -158,6 +158,15 @@
           ? "Legacy Projects ▼"
           : "Legacy Projects ▲";
       });
+      
+      document.getElementById("toggleTheme").addEventListener("click", function() {
+        const currentTheme = document.documentElement.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", newTheme);
+      });
+      
+      // Set default theme
+      document.documentElement.setAttribute("data-theme", "dark");
 
       //const toggleBtn = document.getElementById("toggleBackground");
       //toggleBtn.addEventListener("click", () => {
