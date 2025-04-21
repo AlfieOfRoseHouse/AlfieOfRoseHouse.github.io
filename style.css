@@ -14,7 +14,7 @@
   --text-dark: #eee;
   --subtitle: #666;
   --background: #fdfdfd;
-  --background-accent:#f0f0f0;
+  --background-accent:#e5e5e5;
   --line: #999;
   --accent: #cc7a00;
   --link-light: #006d77;
@@ -64,6 +64,7 @@ canvas {
   border: 0;
   border-bottom: 1px solid var(--line);
   background: var(--background-accent);
+  color: inherit;
   cursor: pointer;
   transition: background-color 0.2s ease, border 0.3s ease;
 }
@@ -91,6 +92,7 @@ canvas {
   align-items: center;
   box-sizing: border-box;
   overflow: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 .header {
   position: sticky;
