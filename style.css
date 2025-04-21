@@ -102,6 +102,7 @@ canvas {
   padding-top: 0.25rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   border-bottom: 1px solid var(--text-dark);
+  width: 100%;
 }
 footer {
   position: absolute;
@@ -130,7 +131,6 @@ h2 {
   font-weight: 600;
   line-height: 1.2;
   color: var(--text-light);
-  border-bottom: 2px solid var(--line);
 }
 
 h1 {
@@ -154,7 +154,9 @@ h2 {
   margin-top: 0;
   font-size: 1.2rem;
   text-align: center;
-  border-bottom: none
+  border-bottom: none;
+  width: fit-content;
+  border-top: 2px solid var(--line);
 }
 
 p, li {
