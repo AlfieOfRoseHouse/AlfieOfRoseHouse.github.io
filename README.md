@@ -35,7 +35,7 @@ Or visit the live version hosted via GitHub Pages at:
 
 **--**
 
-**-- Projects --**
+**-- Projects --** (All projects are ordered latest at top and oldest at bottom)
 
 - **Email Harvester:** A Python script for scraping publicly available email addresses based on a search query **_Educational use only!!_**
 - **Draughts Game:** A Draughts-based game built using _HTML_, _CSS_, _JS_
