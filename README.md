@@ -41,7 +41,7 @@ Or visit the live version hosted via GitHub Pages at:
 - **Draughts Game:** A Draughts-based game built using _HTML_, _CSS_, _JS_
 - ...
 
-**-- Legacy Projects --** (a couple of projects made in Scratch and during my childhood)
+**-- Legacy Projects --** (a couple of projects made in Scratch and during my childhood age: 10-)
 
 - **Asteroid Hunter:** An arcade-style game made in Scratch
 - **3d Raycaster:** A 3d raycaster using the pen extension of Scratch
