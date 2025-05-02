@@ -2,50 +2,68 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Alfie | Portfolio</title>
     <link rel="stylesheet" href="style.css" />
-
-    <!-- P5 extension for background -->
+    
+    <!-- P5.js background extension -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
     <script src="background.js"></script>
 
-    <!-- Standard favicon -->
+    <!-- Favicon Links -->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-    
-    <!-- PNG favicons -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="assets/android-chrome-512x512.png">
-    
-    <!-- Apple touch icon -->
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    
+    <!-- Background Music -->
+    <audio id="bgMusic" src="Galactic Gridlock.mp3" type="audio/mpeg" loop></audio>
 
-    <!-- Background Music (Made by me) -->
-    <audio id="bgMusic" src="Galactic Gridlock.mp3" type="audio/mpeg"></audio>
-
+    <!-- Scripts for accessibility and theme switching -->
     <script>
-      const audio = document.getElementById("bgMusic");
+      document.addEventListener("DOMContentLoaded", function () {
+        const audio = document.getElementById("bgMusic");
+        const toggleThemeBtn = document.getElementById("toggleTheme");
+        const legacyToggle = document.getElementById("legacyToggle");
+        const legacyList = document.querySelector(".legacyList");
 
-      window.addEventListener('click', function () { //Waits for user input due to security concerns
-              audio.play(); //play on load
-
-        audio.addEventListener('ended', function () { //Repeat after small break
-          setTimeout(() => {
-            audio.currentTime = 0;
-            audio.play();
-          }, 2000);
+        // Start music after user interaction
+        window.addEventListener('click', function () {
+          audio.play();
         });
+
+        // Toggle the theme (light/dark)
+        toggleThemeBtn.addEventListener("click", function () {
+          const currentTheme = document.documentElement.getAttribute("data-theme");
+          const newTheme = currentTheme === "light" ? "dark" : "light";
+          document.documentElement.setAttribute("data-theme", newTheme);
+        });
+
+        // Toggle the visibility of archived projects
+        legacyToggle.addEventListener("click", function () {
+          legacyList.classList.toggle("hidden");
+          legacyToggle.classList.toggle("active");
+          legacyToggle.innerHTML = legacyList.classList.contains("hidden")
+            ? "Archived Projects ▼"
+            : "Archived Projects ▲";
+        });
+
+        // Set default theme
+        document.documentElement.setAttribute("data-theme", "dark");
       });
     </script>
   </head>
+  
   <body>
-    <div id="buttonContainer">
-      <button id="toggleBackground">Toggle Background!</button>
-      <button id="toggleTheme">Light | Dark</button>
-    </div>
-    
-    <div class="container">
+    <header>
+      <div id="buttonContainer">
+        <button id="toggleBackground" aria-label="Toggle background effect">Toggle Background!</button>
+        <button id="toggleTheme" aria-label="Toggle between light and dark theme">Light | Dark</button>
+      </div>
+
       <div class="header">
         <h1>Alfie of RoseHouse</h1>
         <div class="subtitle-wrapper">
@@ -63,7 +81,7 @@
               <div class="tooltip">
                 Deutsch: „Sprachen verbinden Welten“<br />
                 Русский: «Я изучаю языки, чтобы лучше понимать людей и культуру.»<br />
-                English (native), German(~B2), Russian(~A1), Japanese(~A2)<br />
+                English (native), German (~B2), Russian (~A1), Japanese (~A2)<br />
                 Programming: HTML, CS, JS, Python, Lua, Linux
               </div>
             </div>
@@ -77,154 +95,98 @@
           </div>
         </div>
       </div>
+    </header>
 
-      <div class="body">
-        <section>
-          <h2>Recent Projects</h2>
-          <ul class="projectList">
+    <main>
+      <section aria-labelledby="recent-projects">
+        <h2 id="recent-projects">Recent Projects</h2>
+        <ul class="projectList">
+          <li>
+            <div class="project-title">
+              <a href="https://github.com/AlfieOfRoseHouse/RegexTester/" target="_blank" aria-label="View Regex Tester project">Regex Tester</a>
+              <span class="badge red">HTML|CSS|JS</span>
+              <span class="badge green">Utility</span>
+              <span class="badge gold">Level 1</span>
+            </div>
+            <div class="project-description">Test Regex Patterns and keys on your input text.</div>
+          </li>
+          <li>
+            <div class="project-title">
+              <a href="https://github.com/AlfieOfRoseHouse/EmailHarvester" target="_blank" aria-label="View Email Harvester project">Email Harvester</a>
+              <span class="badge red">Python</span>
+              <span class="badge green">OSINT</span>
+              <span class="badge gold">Level 1</span>
+            </div>
+            <div class="project-description">Harvests email addresses from public sources for OSINT purposes.</div>
+          </li>
+          <li>
+            <div class="project-title">
+              <a href="https://github.com/AlfieOfRoseHouse/DraughtsGame/" target="_blank" aria-label="View Draughts Game project">Draughts Game</a>
+              <span class="badge red">HTML|CSS|JS</span>
+              <span class="badge green">Game</span>
+              <span class="badge gold">Level 2</span>
+            </div>
+            <div class="project-description">A browser-based draughts game built using HTML, CSS, and JavaScript.</div>
+          </li>
+          <li>
+            <div class="project-title">
+              <a href="https://github.com/AlfieOfRoseHouse/DeadWood/" target="_blank" aria-label="View Deadwood project">Deadwood</a>
+              <span class="badge red">HTML|CSS|JS</span>
+              <span class="badge green">Game</span>
+              <span class="badge gold">Level 1</span>
+            </div>
+            <div class="project-description">A browser-based text-adventure puzzle-based game built using HTML, CSS, and JavaScript.</div>
+          </li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="archived-projects">
+        <h2 id="legacyToggle" class="collapsible">Archived Projects ▼</h2>
+        <div class="legacyList hidden">
+          <p id="legacyDescription">Games and utilities made by me in my childhood (Scratch)</p>
+          <ul class="legacyList">
             <li>
-              <div class="project-title">
-                <a href="https://github.com/AlfieOfRoseHouse/RegexTester/" target="_blank">Regex Tester</a>
-                <span class="badge red">HTML|CSS|JS</span>
-                <span class="badge green">Utility</span>
-                <span class="badge gold">Level 1</span>
-              </div>
-              <div class="project-description">Test Regex Patterns and keys on your input text.</div>
+              <a href="https://scratch.mit.edu/projects/944660567/" target="_blank">Asteroid Hunter</a>
+              <span class="badge red">Scratch</span>
+              <span class="badge green">Game</span>
+              <span class="badge gold">Level 1</span>
             </li>
             <li>
-              <div class="project-title">
-                <a href="https://github.com/AlfieOfRoseHouse/EmailHarvester" target="_blank">Email Harvester</a>
-                <span class="badge red">Python</span>
-                <span class="badge green">OSINT</span>
-                <span class="badge gold">Level 1</span>
-              </div>
-              <div class="project-description">Harvests email addresses from public sources for OSINT purposes.</div>
+              <a href="https://scratch.mit.edu/projects/941116230/" target="_blank">3D Raycaster</a>
+              <span class="badge red">Scratch</span>
+              <span class="badge green">Test</span>
+              <span class="badge gold">Level 2</span>
             </li>
             <li>
-              <div class="project-title">
-                <a href="https://github.com/AlfieOfRoseHouse/DraughtsGame/" target="_blank">Draughts Game</a>
-                <span class="badge red">HTML|CSS|JS</span>
-                <span class="badge green">Game</span>
-                <span class="badge gold">Level 2</span>
-              </div>
-              <div class="project-description">A browser-based draughts game built using HTML, CSS, and JavaScript.</div>
+              <a href="https://scratch.mit.edu/projects/946226429/" target="_blank">Firework Simulator</a>
+              <span class="badge red">Scratch</span>
+              <span class="badge green">Test</span>
+              <span class="badge gold">Level 1</span>
             </li>
             <li>
-              <div class="project-title">
-                <a href="https://github.com/AlfieOfRoseHouse/DeadWood/" target="_blank">Deadwood</a>
-                <span class="badge red">HTML|CSS|JS</span>
-                <span class="badge green">Game</span>
-                <span class="badge gold">Level 1</span>
-              </div>
-              <div class="project-description">A browser-based text-adventure puzzle-based game built using HTML, CSS, and JavaScript.</div>
+              <a href="https://scratch.mit.edu/projects/951780397/" target="_blank">Maze Generator</a>
+              <span class="badge red">Scratch</span>
+              <span class="badge green">Test</span>
+              <span class="badge gold">Level 2</span>
             </li>
           </ul>
-        </section>
-  
-        <section>
-          <h2 class='collapsible' id='legacyToggle'>Archived Projects ▼</h2>
-          <div class='legacyList hidden'>
-            <p id="legacyDescription">Games and utilities made by me in my childhood (Scratch)</p>
-            <ul class="legacyList">
-              <li class="scratch-account">
-                Pixel-Pearce (account)
-              </li>
-              <li>
-                <div class="project-title">
-                  <a href="https://scratch.mit.edu/projects/944660567/" target="_blank">Asteroid Hunter</a>
-                  <span class="badge red">Scratch</span>
-                  <span class="badge green">Game</span>
-                  <span class="badge gold">Level 1</span>
-                </div>
-                <div class="project-description">Classic arcade-style space shooter built in Scratch. Asteroids split apart on impact - retro vibes guaranteed.</div>
-              </li>
-              <li>
-                <div class="project-title">
-                  <a href="https://scratch.mit.edu/projects/941116230/" target="_blank">3D Raycaster</a>
-                  <span class="badge red">Scratch</span>
-                  <span class="badge green">Test</span>
-                  <span class="badge gold">Level 2</span>
-                </div>
-                <div class="project-description">Scratch-based 3D raycaster - low FPS, high ambition.</div>
-              </li>
-              <li>
-                <div class="project-title">
-                  <a href="https://scratch.mit.edu/projects/946226429/" target="_blank">Firework Simulator</a>
-                  <span class="badge red">Scratch</span>
-                  <span class="badge green">Test</span>
-                  <span class="badge gold">Level 1</span>
-                </div>
-                <div class="project-description">A simple particle simulation that creates fireworks at random intervals.</div>
-              </li>
-              <li>
-                <div class="project-title">
-                  <a href="https://scratch.mit.edu/projects/951780397/" target="_blank">Maze Generator</a>
-                  <span class="badge red">Scratch</span>
-                  <span class="badge green">Test</span>
-                  <span class="badge gold">Level 2</span>
-                </div>
-                <div class="project-description">Creates a random maze (using recursive backtracking), avoiding a black-listed shape, you can navigate through.</div>
-              </li>
-              <li class="scratch-account">
-                Shiftclick_Studios (account)
-              </li>
-              <li>
-                <div class="project-title">
-                  <a href="https://scratch.mit.edu/projects/504884789/" target="_blank">Zombie Shooter</a>
-                  <span class="badge red">Scratch</span>
-                  <span class="badge green">Game</span>
-                  <span class="badge gold">Level 1</span>
-                </div>
-                <div class="project-description">Zombie shooter with waves and shop mechanics. Old and buggy but fun.</div>
-              </li>
-            </ul>
-          </div>
-        </section>
-  
-        <section>
-          <h2>On the Radar</h2>
-          <ul class="todo-list">
-            <li>Web-based Intelligence Dashboard</li>
-            <li>Hash Cracker Utility</li>
-            <li>Threat Visualiser (leaflet.js)</li>
-          </ul>
-        </section>
+        </div>
+      </section>
 
-        <p> </p>
-      </div>
+      <section aria-labelledby="on-the-radar">
+        <h2 id="on-the-radar">On the Radar</h2>
+        <ul class="todo-list">
+          <li>Web-based Intelligence Dashboard</li>
+          <li>Hash Cracker Utility</li>
+          <li>Threat Visualiser (leaflet.js)</li>
+        </ul>
+      </section>
+    </main>
 
-      <footer>
-        <p>
-          Encrypted & Decrypted by Alfie of RoseHouse | <a href="mailto:alfiewpearce@gmail.com">Encrypted Contact</a>
-        </p>
-      </footer>
-    </div>
-
-    <script>
-      const legacyToggle = document.getElementById("legacyToggle");
-      const legacyList = document.querySelector(".legacyList");
-
-      legacyToggle.addEventListener("click", function() {
-        legacyList.classList.toggle("hidden");
-        legacyToggle.classList.toggle("active");
-        legacyToggle.innerHTML = legacyList.classList.contains("hidden")
-          ? "Archived Projects ▼"
-          : "Archived Projects ▲";
-      });
-      
-      document.getElementById("toggleTheme").addEventListener("click", function() {
-        const currentTheme = document.documentElement.getAttribute("data-theme");
-        const newTheme = currentTheme === "light" ? "dark" : "light";
-        document.documentElement.setAttribute("data-theme", newTheme);
-      });
-      
-      // Set default theme
-      document.documentElement.setAttribute("data-theme", "dark");
-
-      //const toggleBtn = document.getElementById("toggleBackground");
-      //toggleBtn.addEventListener("click", () => {
-      //  document.body.classList.toggle("starry");
-      //});
-    </script>
+    <footer>
+      <p>
+        Encrypted & Decrypted by Alfie of RoseHouse | <a href="mailto:alfiewpearce@gmail.com" aria-label="Send email to Alfie">Encrypted Contact</a>
+      </p>
+    </footer>
   </body>
 </html>
