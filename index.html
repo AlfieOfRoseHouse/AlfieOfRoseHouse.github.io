@@ -51,16 +51,13 @@
           localStorage.setItem("theme", newTheme);
         });
 
-        // Toggle the visibility of archived projects
-        legacyToggle.setAttribute("aria-expanded", "false");
-        
+        // Toggle the visibility of archived projects        
         legacyToggle.addEventListener("click", function () {
           legacyList.classList.toggle("hidden");
           legacyToggle.classList.toggle("active");
           legacyToggle.innerHTML = legacyList.classList.contains("hidden")
             ? "Archived Projects ▼"
             : "Archived Projects ▲";
-          legacyToggle.setAttribute("aria-expanded", !isHidden);
         });
 
         // Set default theme
