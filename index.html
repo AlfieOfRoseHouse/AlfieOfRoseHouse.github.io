@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Alfie | Portfolio</title>
     <link rel="stylesheet" href="style.css" />
     
@@ -30,9 +30,17 @@
         const legacyToggle = document.getElementById("legacyToggle");
         const legacyList = document.querySelector(".legacyList");
 
+        //Gets dark/light mode from local storage (useful for mobile)
+        const savedTheme = localStorage.getItem('theme');
+        document.documentElement.setAttribute("data-theme", savedTheme || 'dark');
+
         // Start music after user interaction
-        window.addEventListener('click', function () {
-          audio.play();
+        ['click', 'touchstart'].forEach(event => {
+          window.addEventListener(event, function () {
+            audio.play().catch(e => {
+              console.warn('Playback Failiure', e);
+            });
+          }, { once: true });
         });
 
         // Toggle the theme (light/dark)
@@ -40,15 +48,19 @@
           const currentTheme = document.documentElement.getAttribute("data-theme");
           const newTheme = currentTheme === "light" ? "dark" : "light";
           document.documentElement.setAttribute("data-theme", newTheme);
+          localStorage.setItem("theme", newTheme);
         });
 
         // Toggle the visibility of archived projects
+        legacyToggle.setAttribute("aria-expanded", "false");
+        
         legacyToggle.addEventListener("click", function () {
           legacyList.classList.toggle("hidden");
           legacyToggle.classList.toggle("active");
           legacyToggle.innerHTML = legacyList.classList.contains("hidden")
             ? "Archived Projects ▼"
             : "Archived Projects ▲";
+          legacyToggle.setAttribute("aria-expanded", !isHidden);
         });
 
         // Set default theme
