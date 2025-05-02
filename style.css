@@ -22,7 +22,7 @@
 }
 
 body, html {
-  font-family: 'Courier New', monospace;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
   /*background-color: var(--background);*/
   color: var(--text-dark);
   line-height: 1.6;
@@ -30,6 +30,7 @@ body, html {
   padding: 0;
   height: 100vh;
   overflow: hidden;
+  font-size: 16px;
 }
 /*
 body.starry {
@@ -49,11 +50,11 @@ canvas {
   display: flex;
   flex-flow: column nowrap;
   position: absolute;
-  gap: 0.5em;
+  gap: 0.75em;
   top: 1em;
   right: 1em;
   color: var(--text-light);
-  font-size: 1em;
+  font-size: 0.9rem;
   line-height: 1.6;
   z-index: 20;
 }
@@ -63,6 +64,7 @@ canvas {
   position: relative;
   border: 0;
   border-bottom: 1px solid var(--line);
+  padding: 0.5em 1em;
   background: var(--background-accent);
   color: inherit;
   cursor: pointer;
@@ -79,15 +81,15 @@ canvas {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90vmin;
-  height: 85vh;
+  width: 85vmin;
+  height: 90vh;
   background: var(--background);
   display: flex;
   flex-direction: column;
   margin: auto;
-  padding: 2rem;
+  padding: 1.5rem;
   border: 1px solid var(--line);
-  border-radius: 6px;
+  border-radius: 12px;
   justify-content: flex-start;
   align-items: center;
   box-sizing: border-box;
@@ -136,19 +138,19 @@ h2 {
 h1 {
   font-size: 2.2rem;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 1rem 0.5rem;
   margin-bottom: -2rem;
 }
 h2 {
   font-size: 1.6rem;
   margin-top: 1.5em;
-  padding: 10px;
+  padding: 0.75rem;
   background-color: var(--background-accent);
   border-top: 2px solid var(--text-dark);
   border-left: 2px solid var(--text-dark);
   border-right: 2px solid var(--text-dark);
   border-bottom: 3px solid var(--line);
-  margin-top: 40px;
+  margin-top: 2rem;
 }
 
 .subtitle-wrapper {
@@ -175,7 +177,7 @@ h2 {
   gap: 0.5rem;
   position: relative;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--text-light);
 }
 .subtitle-item {
@@ -232,12 +234,12 @@ h2 {
 }
 
 p, li {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--text-light);
 }
 
 a {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--link-dark);
   text-decoration: none;
   font-weight: bold;
@@ -272,11 +274,11 @@ a:hover {
   display: inline-block;
   background-color: var(--accent);
   color: var(--text-light);
-  padding: 0.3em 0.6em;
+  padding: 0.3em 0.5em;
   border-radius: 0.5em;
   text-decoration: none;
   font-weight: bold;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   margin-top: 0.5em;
   margin-left: 6px;
 }
@@ -290,7 +292,7 @@ a:hover {
   display: none;
   font-size: 0.9em;
   color: var(--text-dark);
-  margin-top: 5px;
+  margin-top: 0.25rem;
   font-style: italic;
 }
 
