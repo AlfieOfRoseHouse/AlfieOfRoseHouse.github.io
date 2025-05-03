@@ -65,8 +65,7 @@
 
         function updateClock() { //Recursive function repeating every exact second
           const now = new Date(Date.now());
-          document.getElementById('live-clock').textContent =
-            now.toLocaleTimeString('en-GB', { hour12: false });
+          document.getElementById('live-clock').textContent = now.toLocaleTimeString('en-GB', { hour12: false });
         
           // Calculate milliseconds until the *next* second boundary
           const delay = 1000 - (now.getMilliseconds());
