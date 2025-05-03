@@ -116,6 +116,7 @@ footer {
   color: var(--text-light);
   text-align: center;
   border-top: 1px solid var(--text-dark);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 footer a {
   color: var(--link-light);
