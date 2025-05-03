@@ -357,14 +357,14 @@ a:hover {
     transform: translateX(-50%);
   }
 }
-@media(max-width: 390px) {
+@media(max-width: 440px) {
   .divider { display:none; }
-  .subtitle-container {
+    .subtitle-wrapper {
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
     game: 0.5rem;
   }
-  
 }
 @media(max-width: 400px) {
   .badge.gold { display: none; }
