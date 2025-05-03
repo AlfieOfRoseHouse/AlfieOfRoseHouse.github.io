@@ -62,6 +62,19 @@
 
         // Set default theme
         document.documentElement.setAttribute("data-theme", "dark");
+
+        function updateClock() { //Recursive function repeating every exact second
+          const now = new Date(Date.now());
+          document.getElementById('liveClock').textContent =
+            now.toLocaleTimeString('en-GB', { hour12: false });
+        
+          // Calculate milliseconds until the *next* second boundary
+          const delay = 1000 - (now.getMilliseconds());
+          setTimeout(updateClock, delay);
+        }
+        
+        // Kicks clock it off once
+        updateClock();
       });
     </script>
   </head>
