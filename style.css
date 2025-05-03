@@ -341,26 +341,28 @@ a:hover {
 }
 
 @media(max-width: 540px) {
+    .subtitle-container .divider:not(:first-of-type) { display: none; }
+}
+@media(max-width: 540px) {
   .badge.red { display: none; }
-  .subtitle-container .divider:not(:first-of-type) { display: none; }
   .container { padding: 1rem }
-
   .tooltip {
     position: fixed;
     margin: 0 auto;
     left: 50%;
     transform: translateX(-50%);
   }
-
   .subtitle-item {
     margin-left: 1rem;
     margin-right: 1rem;
   }
 }
 @media(max-width: 400px) {
+  .divider { display:none; }
+}
+@media(max-width: 400px) {
   .badge.gold { display: none; }
 }
 @media(max-width: 350px) {
   .badge.green { display: none; }
-  .divider { display:none; }
 }
