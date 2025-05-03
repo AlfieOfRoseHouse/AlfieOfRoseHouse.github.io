@@ -351,6 +351,11 @@ a:hover {
     left: 50%;
     transform: translateX(-50%);
   }
+
+  .subtitle-item {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 }
 @media(max-width: 400px) {
   .badge.gold { display: none; }
