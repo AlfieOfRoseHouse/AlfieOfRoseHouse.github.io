@@ -342,6 +342,10 @@ a:hover {
 
 @media(max-width: 575px) {
     .subtitle-container .divider:not(:first-of-type) { display: none; }
+    .subtitle-item {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
 }
 @media(max-width: 540px) {
   .badge.red { display: none; }
@@ -351,10 +355,6 @@ a:hover {
     margin: 0 auto;
     left: 50%;
     transform: translateX(-50%);
-  }
-  .subtitle-item {
-    margin-left: 1rem;
-    margin-right: 1rem;
   }
 }
 @media(max-width: 440px) {
